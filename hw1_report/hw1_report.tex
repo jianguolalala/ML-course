@@ -1,0 +1,252 @@
+%
+% Machine Learning Course Homework1
+% Only available in ZJU
+%
+\documentclass[12pt,twoside]{article}
+
+\input{macros}
+
+\usepackage{amsmath}
+\usepackage{url}
+\usepackage{mdwlist}
+\usepackage{graphicx}
+\usepackage{clrscode3e}
+\newcommand{\isnotequal}{\mathrel{\scalebox{0.8}[1]{!}\hspace*{1pt}\scalebox{0.8}[1]{=}}}
+\usepackage{listings}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{matrix}
+\usetikzlibrary{positioning}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{shapes.misc}
+\usetikzlibrary{trees}
+
+\newcommand{\answer}{
+ \par\medskip
+ \textbf{Answer:}
+}
+
+\newcommand{\collaborators}{ \textbf{Collaborators:}
+%%% COLLABORATORS START %%%
+
+\tabT Name: Yanwei Wang
+
+\tabT Student ID: 11821049
+%%% COLLABORATORS END %%%
+}
+
+\newcommand{\answerIa}{ \answer
+%%% PROBLEM 1(a) ANSWER START %%%
+\begin{enumerate}
+	\item BF
+	\item C
+	\item AD
+	\item CG
+	\item AE
+	\item AD
+	\item BF
+	\item AE
+	\item C
+\end{enumerate}
+%%% PROBLEM 1(a) ANSWER END %%%
+}
+
+\newcommand{\answerIb}{ \answer
+%%% PROBLEM 1(b) ANSWER START %%%
+False, Because we not only need the model to fit the training data, but also have ablity of generalization on similar data except for training data.
+
+%%% PROBLEM 1(b) ANSWER END %%%
+}
+
+\newcommand{\answerIIa}{ \answer
+%%% PROBLEM 2(a) ANSWER START %%%
+\begin{enumerate}
+	\item $P(B_1=1)=\frac{1}{3}$
+	\item $P(B_2=0|B_1=1)=1$
+	\item $P(B_1=1|B_2=0)=\frac{P(B_2=0|B_1=1)P(B_1=1)}{P(B_2=0)}=\frac{1}{3}$
+	\item $P(B_1 =1)=\frac{1}{3}$ \\
+	$P(B_3=1)=1-P(B_1=0,B_2=0)=\frac{2}{3}$
+\end{enumerate}
+%%% PROBLEM 2(a) ANSWER END %%%
+}
+\newcommand{\answerIIb}{ \answer
+%%% PROBLEM 2(b) ANSWER START %%%
+\begin{enumerate}
+	\item Error num is 64 using MLE
+	\item Error num is 47 using MAP
+	\item The minimal total risk is 0.2475
+\end{enumerate}
+%%% PROBLEM 2(b) ANSWER END %%%
+}
+
+
+
+\newcommand{\answerIIIa}{ \answer 
+%%% PROBLEM 3(a) ANSWER START %%%
+The boundary is a line, $x+y-1=0$
+%%% PROBLEM 3(a) ANSWER END %%%
+
+}
+\newcommand{\answerIIIb}{ \answer
+	%%% PROBLEM 3(b) ANSWER START %%%
+	Pass
+	%%% PROBLEM 3(b) ANSWER END %%%
+}
+\newcommand{\answerIIIc}{ \answer
+%%% PROBLEM 3(c) ANSWER START %%%
+For the speed of the code, I change the plot step to 0.1.
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=3.5in]{hw1_gaussian_discriminant.png}
+\end{figure}
+%%% PROBLEM 3(c) ANSWER END %%%
+}
+
+\newcommand{\answerIIId}{ \answer
+%%% PROBLEM 3(d) ANSWER START %%%
+I think $\phi$ is the prior of $p(y)$, and $\mu$,$\Sigma$ should be calculated respectively,$$\hat{\mu}=\frac{1}{n}\sum_{i=1}^{n}x_i$$,
+$$\hat{\Sigma}=\frac{1}{n}\sum_{i=1}^{n}(x_i-\hat{\mu})$$
+
+%%% PROBLEM 3(d) ANSWER END %%%
+}
+\newcommand{\answerIIIIa}{ \answer
+%%% PROBLEM 4(a) ANSWER START %%%
+aural bihamdihi leary cowpea wxb eep proffer invesco fetid tours
+%%% PROBLEM 4(a) ANSWER END %%%
+}
+\newcommand{\answerIIIIb}{ \answer
+%%% PROBLEM 4(b) ANSWER START %%%
+0.7828
+%%% PROBLEM 4(b) ANSWER END %%%
+}
+\newcommand{\answerIIIIc}{ \answer
+%%% PROBLEM 4(c) ANSWER START %%%
+Fasle, because if the data is imbalanced, such as abnormal detection task, one kind data is much larger than the other,even if the model outputs only one value, the accuracy is high.
+%%% PROBLEM 4(c) ANSWER END %%%
+}
+\newcommand{\answerIIIId}{ \answer
+%%% PROBLEM 4(d) ANSWER START %%%
+\begin{tabular}{|c|c|c|}% 
+	 \hline  % 在表格最上方绘制横线
+	 &Spam(label)&Ham(label) \\
+	 \hline
+	Spam(predict)&227&1\\
+	\hline  %在第一行和第二行之间绘制横线
+	Ham(predict)&897&3010\\
+	\hline % 在表格最下方绘制横线
+\end{tabular}
+
+%%% PROBLEM 4(d) ANSWER END %%%
+}
+\newcommand{\answerIIIIe}{ \answer
+%%% PROBLEM 4(e) ANSWER START %%%
+Precison is more important for this question, but recall is more important to identify drugs and bombs.
+For email, we only need to discard the true spam, for some we can not decide we should keep them in order to prevent losing importtant thing;
+For bomb detection, even if the possibility of bomb is very small, we should check the luggage.   
+%% PROBLEM 4(e) ANSWER END %%%
+}
+
+\setlength{\oddsidemargin}{0pt}
+\setlength{\evensidemargin}{0pt}
+\setlength{\textwidth}{6.5in}
+\setlength{\topmargin}{0in}
+\setlength{\textheight}{8.5in}
+
+% Fill these in!
+\newcommand{\theproblemsetnum}{1}
+\newcommand{\releasedate}{Sep 12, 2019}
+\newcommand{\partaduedate}{Oct 8, 2019}
+\newcommand{\tabUnit}{3ex}
+\newcommand{\tabT}{\hspace*{\tabUnit}}
+
+\begin{document}
+
+\handout{Homework \theproblemsetnum}{\releasedate}
+
+
+
+\collaborators
+% Please download the .zip archive for this problem set, and refer to the
+% hw1.pdf file for instructions on preparing your solutions.
+%
+
+
+\medskip
+
+\hrulefill
+
+\begin{problems}
+
+\problem \textbf{Machine Learning Problems}
+\begin{problemparts}
+\problempart Choose proper word(s) from
+\answerIa
+
+
+\problempart True or False: “To fully utilizing available data resource, we should use all the data we
+have to train our learning model and choose the parameters that maximize performance
+on the whole dataset.” Justify your answer.
+\answerIb
+
+\end{problemparts}
+\newpage
+
+\problem \textbf{Bayes Decision Rule}
+\begin{problemparts}
+\problempart
+Suppose you are given a chance to win bonus grade points:
+
+
+\answerIIa
+
+\problempart Now let us use bayes decision theorem to make a two-class classifier $\cdots$.
+
+\answerIIb
+
+
+\end{problemparts}
+\newpage
+\problem \textbf{Gaussian Discriminant Analysis and MLE}
+
+Given a dataset consisting of m samples. We assume these samples are independently generated by one of two Gaussian distributions$\cdots$
+\begin {problemparts}
+\problempart What is the decision boundary?
+
+\answerIIIa
+
+\problempart An extension of the above model is to classify K classes by fitting a Gaussian distribution for each class$\cdots$
+\answerIIIb
+
+\problempart  Now let us do some field work – playing with the above 2-class Gaussian discriminant model.
+\answerIIIc
+
+\problempart What is the maximum likelihood estimation of $\phi, \mu_0$ and $\mu_1$?
+\answerIIId 
+
+\end{problemparts}
+
+\newpage
+
+\problem  \textbf{Text Classification with Naive Bayes}
+
+\begin{problemparts}
+\problempart  List the top 10 words.
+
+\answerIIIIa
+
+\problempart What is the accuracy of your spam filter on the testing set?
+\answerIIIIb
+
+\problempart True or False: a model with 99\% accuracy is always a good model. Why?
+\answerIIIIc
+
+\problempart Compute the precision and recall of your learnt model.
+\answerIIIId 
+
+\problempart For a spam filter, which one do you think is more important, precision or recall? What about a classifier to identify drugs and bombs at airport? Justify your answer.
+\answerIIIIe 
+
+\end{problemparts}
+
+\end{problems}
+\end{document}

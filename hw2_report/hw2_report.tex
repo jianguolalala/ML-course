@@ -1,0 +1,252 @@
+%
+% 6.006 problem set 5
+%
+\documentclass[12pt,twoside]{article}
+
+\input{macros}
+
+\usepackage{amsmath}
+\usepackage{url}
+\usepackage{mdwlist}
+\usepackage{graphicx}
+\usepackage{clrscode3e}
+\newcommand{\isnotequal}{\mathrel{\scalebox{0.8}[1]{!}\hspace*{1pt}\scalebox{0.8}[1]{=}}}
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage{float}
+\usetikzlibrary{arrows}
+\usetikzlibrary{matrix}
+\usetikzlibrary{positioning}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{shapes.misc}
+\usetikzlibrary{trees}
+
+\usepackage{hyperref}
+\usepackage[all]{hypcap}
+\usepackage{caption}
+\captionsetup{hypcap=true}
+
+\newcommand{\answer}{
+ \par\medskip
+ \textbf{Answer:}
+}
+
+\newcommand{\collaborators}{ \textbf{Collaborators:}
+%%% COLLABORATORS START %%%
+
+\tabT Name: Yanwei Wang
+
+\tabT Student ID: 11821049
+%%% COLLABORATORS END %%%
+}
+
+\newcommand{\answerIa}{ \answer
+%%% PROBLEM 1(a) ANSWER START %%%
+\begin{enumerate}
+	\item 10: train error 0.0, test error 0.106 \\100: train error 0.0, test error 0.141
+	\item 10: 5.468 steps\\
+	100: 20.458 steps
+	\item Beacuse the data is non-linearly separable, we get a model with some training error.
+
+\end{enumerate}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.7]{p100.png}
+	\caption{The plotting result for perceptron when nTrain = 100.}
+	\label{figure2}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.7]{pnl.png}
+	\caption{The plotting result for perceptron when training data is not linearly seperable.}
+	\label{figure3}
+\end{figure}
+%%% PROBLEM 1(a) ANSWER END %%%
+}
+
+\newcommand{\answerIb}{ \answer
+%%% PROBLEM 1(b) ANSWER START %%%
+\begin{enumerate}
+	\item Train error is 0.398, test error is 0.05
+	\item Train error is 0.132, test error is 0.0597
+	\item Training error is 0.49, testing error is 0.5496.
+	\item Training error is 0.05, testing error is 0.066.
+	
+\end{enumerate}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.7]{linear.png}
+	\caption{The plotting result for linear regression.}
+	\label{figure4}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.7]{linearn.png}
+	\caption{The plotting result for linear regression when training data is not linearly seperable.}
+	\label{figure5}
+\end{figure}
+%%% PROBLEM 1(b) ANSWER END %%%
+}
+
+\newcommand{\answerIc}{ \answer
+	%%% PROBLEM 1(c) ANSWER START %%%
+	\begin{enumerate}
+		\item Train error is 0.0064, test error is 0.0182
+		\item Train error is 0.123, test error is 0.0444
+	\end{enumerate}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.7]{logistic.png}
+		\caption{The plotting result for logistic regression.}
+		\label{figure6}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.7]{logisticn.png}
+		\caption{The plotting result for logistic regression when training data is not linearly seperable.}
+		\label{figure7}
+	\end{figure}
+	%%% PROBLEM 1(c) ANSWER END %%%
+}
+
+\newcommand{\answerId}{ \answer
+	%%% PROBLEM 1(d) ANSWER START %%%
+	\begin{enumerate}
+		\item Train error is 0.0, test error is 0.0345
+		\item Train error is 0.0, test error is 0.0109
+		\item There are 3 support vector
+	\end{enumerate}
+
+	\begin{figure}
+		\centering
+		\includegraphics[scale=0.7]{svm.png}
+		\caption{The plotting result for SVM when nTrain is 100.}
+		\label{figure9}
+	\end{figure}
+	%%% PROBLEM 1(d) ANSWER END %%%
+}
+
+\newcommand{\answerIIa}{ \answer
+%%% PROBLEM 2(a) ANSWER START %%%
+
+\begin{enumerate}
+	\item 100.0
+	\item with reg is 0.133, without reg is 1.02
+	\item with reg: train error is 0.0, test error is 0.059\\
+	without reg: train error is 0.0, test error is 0.126
+\end{enumerate}
+%%% PROBLEM 2(a) ANSWER END %%%
+}
+
+
+\newcommand{\answerIIb}{ \answer
+%%% PROBLEM 2(b) ANSWER START %%%
+Every lambda error count is same, so 0.001 chosen by LOOCV \\
+with reg: train error is 0.105, test error is 0.123 \\
+without reg: train error is 0.105, test error is 0.123
+%%% PROBLEM 2(b) ANSWER END %%%
+}
+
+
+
+\newcommand{\answerIIIa}{ \answer 
+%%% PROBLEM 3(a) ANSWER START %%%
+\begin{enumerate}
+	\item False
+	\item False
+	\item True
+	\item False
+	\item False
+\end{enumerate}
+%%% PROBLEM 3(a) ANSWER END %%%
+
+}
+
+
+\setlength{\oddsidemargin}{0pt}
+\setlength{\evensidemargin}{0pt}
+\setlength{\textwidth}{6.5in}
+\setlength{\topmargin}{0in}
+\setlength{\textheight}{8.5in}
+
+% Fill these in!
+\newcommand{\theproblemsetnum}{2}
+\newcommand{\releasedate}{Sep 24, 2019}
+\newcommand{\partaduedate}{Oct 17, 2019}
+\newcommand{\tabUnit}{3ex}
+\newcommand{\tabT}{\hspace*{\tabUnit}}
+
+\begin{document}
+
+\handout{Homework \theproblemsetnum}{\releasedate}
+
+%\textbf{Both theory and programming questions} are due {\bf \partaduedate} at
+%{\bf 11:59PM}.
+%
+\collaborators
+%Please download the .zip archive for this problem set, and refer to the
+%\texttt{README.txt} file for instructions on preparing your solutions.
+%
+%We will provide the solutions to the problem set 10 hours after the problem set
+%is due. You will have to read the solutions, and write a brief \textbf{grading
+%explanation} to help your grader understand your write-up. You will need to
+%submit the grading explanation by \textbf{Thursday, November 3rd, 11:59PM}. Your
+%grade will be based on both your solutions and the grading explanation.
+
+\medskip
+
+\hrulefill
+
+\begin{problems}
+
+\problem \textbf{A Walk Through Linear Models}
+\begin{problemparts}
+\problempart Perceptron
+\answerIa
+
+
+\problempart Linear Regression
+\answerIb
+
+\problempart Logistic Regression
+
+\answerIc
+
+
+\problempart Support Vector Machine
+\answerId
+
+
+\end{problemparts}
+\newpage
+
+\problem \textbf{Regularization and Cross-Validation}
+\begin{problemparts}
+\problempart
+Implement Ridge Regrssion, and use LOOCV to tune the regularization parameter $\lambda$.
+
+
+\answerIIa
+
+\problempart Implement Logistic Regrssion, and use LOOCV to tune the regularization parameter $\lambda$.
+
+\answerIIb
+
+
+\end{problemparts}
+
+\problem \textbf{Bias Variance Trade-off}
+
+Let's review the bias-variance decomposition first. Now please answer the following questions:
+\begin {problemparts}
+\problempart True of False
+
+\answerIIIa
+
+
+\end{problemparts}
+
+
+\end{problems}
+\end{document}
