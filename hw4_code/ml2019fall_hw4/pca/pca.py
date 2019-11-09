@@ -16,4 +16,9 @@ def PCA(data):
     # YOUR CODE HERE
     # Hint: you may need to normalize the data before applying PCA
     # begin answer
+    covData = np.cov(data.T)
+    eigvalue, eigvector = np.linalg.eig(covData)
+    new_idx = np.argsort(-eigvalue)
+    eigvector = eigvector[:, new_idx]
+    return eigvector, eigvalue
     # end answer
